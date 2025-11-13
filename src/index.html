@@ -45,15 +45,18 @@
 <body class="font-sans bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
 
 <header id="header" class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
-    <nav class="max-w-7xl mx-auto px-8 py-4">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center transform rotate-12">
-                    <i class="fas fa-bullseye text-white text-xl transform -rotate-12"></i>
+            <a href="#hero-section" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center transform rotate-12">
+                    <i class="fas fa-bullseye text-white text-lg sm:text-xl transform -rotate-12"></i>
                 </div>
-                <span class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pinpoint Leads</span>
-            </div>
-            <div class="flex items-center space-x-8">
+                <span class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pinpoint Leads</span>
+            </a>
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-700 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="hidden lg:flex items-center space-x-8">
                 <a href="#how-it-works" class="text-gray-700 hover:text-primary font-semibold transition-colors">How It Works</a>
                 <a href="#solution-section" class="text-gray-700 hover:text-primary font-semibold transition-colors">Solutions</a>
                 <a href="#results" class="text-gray-700 hover:text-primary font-semibold transition-colors">Results</a>
@@ -63,79 +66,88 @@
                 </button>
             </div>
         </div>
+        <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 space-y-3">
+            <a href="#how-it-works" class="block text-gray-700 hover:text-primary font-semibold transition-colors">How It Works</a>
+            <a href="#solution-section" class="block text-gray-700 hover:text-primary font-semibold transition-colors">Solutions</a>
+            <a href="#results" class="block text-gray-700 hover:text-primary font-semibold transition-colors">Results</a>
+            <a href="#cta-section" class="block text-gray-700 hover:text-primary font-semibold transition-colors">Contact</a>
+            <button onclick="openCalendlyPopup(event)" class="w-full bg-gradient-to-r from-primary to-warm text-white px-6 py-3 rounded-full font-bold hover:shadow-lg transition-all border-0">
+                Book Consultation
+            </button>
+        </div>
     </nav>
 </header>
 
 <main>
-    <section id="hero-section" class="pt-32 pb-20 px-8 min-h-[700px] flex items-center">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
+    <section id="hero-section" class="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-8 min-h-[600px] sm:min-h-[700px] flex items-center">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="space-y-6 sm:space-y-8">
                 <div class="inline-block bg-accent/30 px-4 py-2 rounded-full">
-                    <span class="text-sm font-bold text-gray-700">🎯 AI + Human Intelligence for Lead Precision</span>
+                    <span class="text-xs sm:text-sm font-bold text-gray-700">🎯 AI + Human Intelligence for Lead Precision</span>
                 </div>
-                <h1 class="text-6xl font-bold leading-tight">
+                <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
                     Transform Your <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Territory Strategy</span> With Smart Leads
                 </h1>
-                <p class="text-xl text-gray-600 leading-relaxed">
+                <p class="text-base sm:text-xl text-gray-600 leading-relaxed">
                     Stop wasting time on leads outside your reach. Our AI-powered system combined with human QA delivers decision-makers within your actual drive-time territory using Clay + ZoomInfo data fusion.
                 </p>
-                <div class="flex items-center space-x-4">
-                    <button onclick="openCalendlyPopup(event)" class="bg-gradient-to-r from-primary to-warm text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all inline-block cursor-pointer border-0">
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                    <button onclick="openCalendlyPopup(event)" class="bg-gradient-to-r from-primary to-warm text-white px-8 py-4 rounded-full font-bold text-base sm:text-lg hover:shadow-xl transform hover:scale-105 transition-all inline-block cursor-pointer border-0">
                         Book Free Consultation
                     </button>
-                    <a href="#pricing" class="border-2 border-primary text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-white transition-all inline-block">
+                    <a href="#pricing" class="border-2 border-primary text-primary px-8 py-4 rounded-full font-bold text-base sm:text-lg hover:bg-primary hover:text-white transition-all inline-block text-center">
                         View Pricing
                     </a>
                 </div>
-                <div class="flex items-center space-x-8 pt-4">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-8 pt-4">
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-check-circle text-secondary text-xl"></i>
-                        <span class="text-gray-700 font-semibold">£2-£3 per lead</span>
+                        <span class="text-sm sm:text-base text-gray-700 font-semibold">£2-£3 per lead</span>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-check-circle text-secondary text-xl"></i>
-                        <span class="text-gray-700 font-semibold">3-5 day delivery</span>
+                        <span class="text-sm sm:text-base text-gray-700 font-semibold">3-5 day delivery</span>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-check-circle text-secondary text-xl"></i>
-                        <span class="text-gray-700 font-semibold">400+ role patterns</span>
+                        <span class="text-sm sm:text-base text-gray-700 font-semibold">400+ role patterns</span>
                     </div>
                 </div>
             </div>
-            <div class="relative">
-                <div class="absolute -top-8 -left-8 w-72 h-72 bg-accent/30 rounded-full blur-3xl"></div>
-                <div class="absolute -bottom-8 -right-8 w-72 h-72 bg-secondary/30 rounded-full blur-3xl"></div>
-                <div class="relative bg-white rounded-3xl p-8 shadow-2xl">
+            <div class="relative mt-8 lg:mt-0">
+                <div class="absolute -top-8 -left-8 w-48 sm:w-72 h-48 sm:h-72 bg-accent/30 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-8 -right-8 w-48 sm:w-72 h-48 sm:h-72 bg-secondary/30 rounded-full blur-3xl"></div>
+                <div class="relative bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
                     <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                            <i class="fas fa-brain text-white"></i>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-lg sm:text-xl"></i>
                         </div>
                         <div>
-                            <div class="font-bold text-gray-800">AI + Human Intelligence</div>
-                            <div class="text-sm text-gray-500">Battle-tested at Nwave Technologies</div>
+                            <div class="text-sm sm:text-base font-bold text-gray-800">AI + Human Intelligence</div>
+                            <div class="text-xs sm:text-sm text-gray-500">Battle-tested at Nwave Technologies</div>
                         </div>
                     </div>
                     <div class="space-y-4">
                         <div class="bg-gradient-to-r from-cool/20 to-secondary/20 rounded-2xl p-4">
                             <div class="flex items-center space-x-2 mb-2">
                                 <i class="fas fa-robot text-secondary"></i>
-                                <span class="font-semibold text-gray-700">Clay + ZoomInfo Fusion</span>
+                                <span class="text-sm sm:text-base font-semibold text-gray-700">Clay + ZoomInfo Fusion</span>
                             </div>
-                            <p class="text-sm text-gray-600">Maximum coverage with AI deduplication & scoring</p>
+                            <p class="text-xs sm:text-sm text-gray-600">Maximum coverage with AI deduplication & scoring</p>
                         </div>
                         <div class="bg-gradient-to-r from-accent/20 to-warm/20 rounded-2xl p-4">
                             <div class="flex items-center space-x-2 mb-2">
                                 <i class="fas fa-user-check text-warm"></i>
-                                <span class="font-semibold text-gray-700">Human QA Refinement</span>
+                                <span class="text-sm sm:text-base font-semibold text-gray-700">Human QA Refinement</span>
                             </div>
-                            <p class="text-sm text-gray-600">Iterative ICP-aligned job-title scoring validation</p>
+                            <p class="text-xs sm:text-sm text-gray-600">Iterative ICP-aligned job-title scoring validation</p>
                         </div>
                         <div class="bg-gradient-to-r from-primary/20 to-purple-200/40 rounded-2xl p-4">
                             <div class="flex items-center space-x-2 mb-2">
                                 <i class="fas fa-route text-primary"></i>
-                                <span class="font-semibold text-gray-700">Drive-Time Precision</span>
+                                <span class="text-sm sm:text-base font-semibold text-gray-700">Drive-Time Precision</span>
                             </div>
-                            <p class="text-sm text-gray-600">Traffic-aware territory mapping for realistic reach</p>
+                            <p class="text-xs sm:text-sm text-gray-600">Traffic-aware territory mapping for realistic reach</p>
                         </div>
                     </div>
                 </div>
@@ -143,193 +155,193 @@
         </div>
     </section>
 
-    <section id="problem-section" class="py-20 px-8 bg-white">
+    <section id="problem-section" class="py-12 sm:py-20 px-4 sm:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-bold mb-4">The Challenge</span>
-                <h2 class="text-5xl font-bold mb-6">Territory Planning <span class="text-primary">Shouldn't Be</span> This Hard</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Traditional lead generation wastes resources on unreachable prospects. Sound familiar?</p>
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-bold mb-4 text-xs sm:text-sm">The Challenge</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Territory Planning <span class="text-primary">Shouldn't Be</span> This Hard</h2>
+                <p class="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">Traditional lead generation wastes resources on unreachable prospects. Sound familiar?</p>
             </div>
-            <div class="grid grid-cols-2 gap-8">
-                <div id="problem-card-1" class="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-2 cursor-pointer">
-                    <div class="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6 transform rotate-6">
-                        <i class="fas fa-map-pin text-red-500 text-3xl transform -rotate-6"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <div id="problem-card-1" class="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition-all transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6 transform rotate-6">
+                        <i class="fas fa-map-pin text-red-500 text-2xl sm:text-3xl transform -rotate-6"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Geographic Targeting Is Wrong</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">ZIP codes and radius searches ignore traffic patterns, mountains, and water barriers. Your team wastes time on prospects they can't realistically reach.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">Geographic Targeting Is Wrong</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">ZIP codes and radius searches ignore traffic patterns, mountains, and water barriers. Your team wastes time on prospects they can't realistically reach.</p>
                     <div class="bg-white/60 rounded-xl p-4 mt-6">
-                        <div class="text-3xl font-bold text-red-500">40%</div>
-                        <div class="text-sm text-gray-600">Leads outside practical service area</div>
+                        <div class="text-2xl sm:text-3xl font-bold text-red-500">40%</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Leads outside practical service area</div>
                     </div>
                 </div>
-                <div id="problem-card-2" class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-2 cursor-pointer">
-                    <div class="w-16 h-16 bg-yellow-500/20 rounded-2xl flex items-center justify-center mb-6 transform -rotate-6">
-                        <i class="fas fa-user-tie text-yellow-600 text-3xl transform rotate-6"></i>
+                <div id="problem-card-2" class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition-all transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-500/20 rounded-2xl flex items-center justify-center mb-6 transform -rotate-6">
+                        <i class="fas fa-user-tie text-yellow-600 text-2xl sm:text-3xl transform rotate-6"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Missing Decision-Makers</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">Standard tools give you random contacts, not the executives who actually make purchasing decisions. Your outreach targets the wrong people.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">Missing Decision-Makers</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">Standard tools give you random contacts, not the executives who actually make purchasing decisions. Your outreach targets the wrong people.</p>
                     <div class="bg-white/60 rounded-xl p-4 mt-6">
-                        <div class="text-3xl font-bold text-yellow-600">70%</div>
-                        <div class="text-sm text-gray-600">Contacts lack buying authority</div>
+                        <div class="text-2xl sm:text-3xl font-bold text-yellow-600">70%</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Contacts lack buying authority</div>
                     </div>
                 </div>
-                <div id="problem-card-3" class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-2 cursor-pointer">
-                    <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6 transform rotate-6">
-                        <i class="fas fa-database text-purple-500 text-3xl transform -rotate-6"></i>
+                <div id="problem-card-3" class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition-all transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6 transform rotate-6">
+                        <i class="fas fa-database text-purple-500 text-2xl sm:text-3xl transform -rotate-6"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Incomplete Data Coverage</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">Single data sources leave gaps. Clay + ZoomInfo union gives you maximum coverage with verified contacts and enriched profiles you can't get elsewhere.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">Incomplete Data Coverage</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">Single data sources leave gaps. Clay + ZoomInfo union gives you maximum coverage with verified contacts and enriched profiles you can't get elsewhere.</p>
                     <div class="bg-white/60 rounded-xl p-4 mt-6">
-                        <div class="text-3xl font-bold text-purple-500">60%</div>
-                        <div class="text-sm text-gray-600">Missing verified phone numbers</div>
+                        <div class="text-2xl sm:text-3xl font-bold text-purple-500">60%</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Missing verified phone numbers</div>
                     </div>
                 </div>
-                <div id="problem-card-4" class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-2 cursor-pointer">
-                    <div class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 transform -rotate-6">
-                        <i class="fas fa-clock text-blue-500 text-3xl transform rotate-6"></i>
+                <div id="problem-card-4" class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition-all transform hover:-translate-y-2 cursor-pointer">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 transform -rotate-6">
+                        <i class="fas fa-clock text-blue-500 text-2xl sm:text-3xl transform rotate-6"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Manual List Building</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">SDRs spend 50%+ of their time researching and qualifying prospects instead of having conversations. Productivity suffers while quotas remain.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">Manual List Building</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">SDRs spend 50%+ of their time researching and qualifying prospects instead of having conversations. Productivity suffers while quotas remain.</p>
                     <div class="bg-white/60 rounded-xl p-4 mt-6">
-                        <div class="text-3xl font-bold text-blue-500">50%</div>
-                        <div class="text-sm text-gray-600">SDR time wasted on research</div>
+                        <div class="text-2xl sm:text-3xl font-bold text-blue-500">50%</div>
+                        <div class="text-xs sm:text-sm text-gray-600">SDR time wasted on research</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="solution-section" class="py-20 px-8 bg-gradient-to-br from-cool/20 to-secondary/10">
+    <section id="solution-section" class="py-12 sm:py-20 px-4 sm:px-8 bg-gradient-to-br from-cool/20 to-secondary/10">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full font-bold mb-4">Our AI + Human Approach</span>
-                <h2 class="text-5xl font-bold mb-6">Meet Your <span class="text-secondary">Intelligent Territory</span> System</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Developed internally at Nwave Technologies combining AI automation with human expertise. Battle-tested across healthcare sectors.</p>
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full font-bold mb-4 text-xs sm:text-sm">Our AI + Human Approach</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Meet Your <span class="text-secondary">Intelligent Territory</span> System</h2>
+                <p class="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">Developed internally at Nwave Technologies combining AI automation with human expertise. Battle-tested across healthcare sectors.</p>
             </div>
-            <div class="grid grid-cols-3 gap-8">
-                <div id="feature-1" class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-layer-group text-white text-2xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div id="feature-1" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-layer-group text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Clay + ZoomInfo Fusion</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">Combine Clay and ZoomInfo for maximum coverage. AI deduplication, union, and scoring delivers the most complete, CRM-ready dataset available.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">Clay + ZoomInfo Fusion</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">Combine Clay and ZoomInfo for maximum coverage. AI deduplication, union, and scoring delivers the most complete, CRM-ready dataset available.</p>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-purple-500"></i>
-                            <span class="text-sm text-gray-700">Maximum data source coverage</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Maximum data source coverage</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-purple-500"></i>
-                            <span class="text-sm text-gray-700">Intelligent deduplication</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Intelligent deduplication</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-purple-500"></i>
-                            <span class="text-sm text-gray-700">Union scoring algorithm</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Union scoring algorithm</span>
                         </div>
                     </div>
                 </div>
-                <div id="feature-2" class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all">
-                    <div class="w-16 h-16 bg-gradient-to-br from-secondary to-cool rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-user-cog text-white text-2xl"></i>
+                <div id="feature-2" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-secondary to-cool rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-user-cog text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Human QA Refinement</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">Iteratively refine ICP-aligned job-title scoring with your includes/excludes and weights. Human quality assurance ensures precision matching.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">Human QA Refinement</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">Iteratively refine ICP-aligned job-title scoring with your includes/excludes and weights. Human quality assurance ensures precision matching.</p>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-secondary"></i>
-                            <span class="text-sm text-gray-700">Client-provided criteria integration</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Client-provided criteria integration</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-secondary"></i>
-                            <span class="text-sm text-gray-700">Iterative scoring refinement</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Iterative scoring refinement</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-secondary"></i>
-                            <span class="text-sm text-gray-700">Human validation layer</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Human validation layer</span>
                         </div>
                     </div>
                 </div>
-                <div id="feature-3" class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all">
-                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-warm rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-route text-white text-2xl"></i>
+                <div id="feature-3" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-warm rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-route text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Drive-Time Precision</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">Define service areas by actual driving time accounting for traffic patterns and geographic barriers. Eliminate leads outside realistic territory reach.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">Drive-Time Precision</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">Define service areas by actual driving time accounting for traffic patterns and geographic barriers. Eliminate leads outside realistic territory reach.</p>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-primary"></i>
-                            <span class="text-sm text-gray-700">Traffic pattern analysis</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Traffic pattern analysis</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-primary"></i>
-                            <span class="text-sm text-gray-700">Geographic barrier recognition</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Geographic barrier recognition</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-primary"></i>
-                            <span class="text-sm text-gray-700">Realistic territory optimization</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Realistic territory optimization</span>
                         </div>
                     </div>
                 </div>
-                <div id="feature-4" class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all">
-                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-400 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-crown text-white text-2xl"></i>
+                <div id="feature-4" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-accent to-yellow-400 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-crown text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Executive Prioritization</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">Automatically prioritize C-suite, VP, and Director-level contacts while filtering out non-decision makers using 400+ role pattern analysis.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">Executive Prioritization</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">Automatically prioritize C-suite, VP, and Director-level contacts while filtering out non-decision makers using 400+ role pattern analysis.</p>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-yellow-600"></i>
-                            <span class="text-sm text-gray-700">C-suite and VP prioritization</span>
+                            <span class="text-xs sm:text-sm text-gray-700">C-suite and VP prioritization</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-yellow-600"></i>
-                            <span class="text-sm text-gray-700">400+ job title patterns</span>
+                            <span class="text-xs sm:text-sm text-gray-700">400+ job title patterns</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-yellow-600"></i>
-                            <span class="text-sm text-gray-700">Authority level scoring</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Authority level scoring</span>
                         </div>
                     </div>
                 </div>
-                <div id="feature-5" class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-microscope text-white text-2xl"></i>
+                <div id="feature-5" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-microscope text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Deeper Insights</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">Access deeper prospect insights than competitors can provide through standard tools. Enhanced data fields unavailable elsewhere.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">Deeper Insights</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">Access deeper prospect insights than competitors can provide through standard tools. Enhanced data fields unavailable elsewhere.</p>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-blue-500"></i>
-                            <span class="text-sm text-gray-700">Verified mobile numbers</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Verified mobile numbers</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-blue-500"></i>
-                            <span class="text-sm text-gray-700">Professional biographies</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Professional biographies</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-blue-500"></i>
-                            <span class="text-sm text-gray-700">Enhanced profile enrichment</span>
+                            <span class="text-xs sm:text-sm text-gray-700">Enhanced profile enrichment</span>
                         </div>
                     </div>
                 </div>
-                <div id="feature-6" class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-file-csv text-white text-2xl"></i>
+                <div id="feature-6" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-file-csv text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">CRM-Ready Delivery</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">Clean, scored, CRM-ready CSV files with verified contact information. Transparent pricing with no subscriptions or hidden fees.</p>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">CRM-Ready Delivery</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">Clean, scored, CRM-ready CSV files with verified contact information. Transparent pricing with no subscriptions or hidden fees.</p>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-sm text-gray-700">3-5 business day delivery</span>
+                            <span class="text-xs sm:text-sm text-gray-700">3-5 business day delivery</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-sm text-gray-700">No subscriptions or minimums</span>
+                            <span class="text-xs sm:text-sm text-gray-700">No subscriptions or minimums</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-check-circle text-green-500"></i>
-                            <span class="text-sm text-gray-700">£2-£3 per qualified lead</span>
+                            <span class="text-xs sm:text-sm text-gray-700">£2-£3 per qualified lead</span>
                         </div>
                     </div>
                 </div>
@@ -337,99 +349,99 @@
         </div>
     </section>
 
-    <section id="how-it-works" class="py-20 px-8 bg-white">
+    <section id="how-it-works" class="py-12 sm:py-20 px-4 sm:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-bold mb-4">AI + Human Process</span>
-                <h2 class="text-5xl font-bold mb-6">From Territory Definition to <span class="text-primary">CRM-Ready Leads</span> in 5 Steps</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Combining automated intelligence with human quality assurance for optimal results</p>
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-bold mb-4 text-xs sm:text-sm">AI + Human Process</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">From Territory Definition to <span class="text-primary">CRM-Ready Leads</span> in 5 Steps</h2>
+                <p class="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">Combining automated intelligence with human quality assurance for optimal results</p>
             </div>
             <div class="space-y-6">
-                <div id="step-1" class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-warm rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">1</div>
+                <div id="step-1" class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-6 sm:p-8">
+                    <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-warm rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl font-bold flex-shrink-0">1</div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Territory Definition + ICP Alignment</h3>
-                            <p class="text-gray-600 leading-relaxed mb-4">Define your service areas based on drive-time boundaries. We map realistic territories accounting for traffic patterns and geographic barriers. Provide your ICP criteria including job-title keyword categories (includes/excludes) and scoring weights.</p>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 text-gray-800">Territory Definition + ICP Alignment</h3>
+                            <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">Define your service areas based on drive-time boundaries. We map realistic territories accounting for traffic patterns and geographic barriers. Provide your ICP criteria including job-title keyword categories (includes/excludes) and scoring weights.</p>
                             <div class="bg-white/60 rounded-xl p-4 mt-4">
                                 <div class="flex items-center space-x-2">
                                     <i class="fas fa-robot text-purple-500"></i>
-                                    <span class="text-sm font-semibold text-gray-700">AI-Powered: Traffic analysis and geographic mapping</span>
+                                    <span class="text-xs sm:text-sm font-semibold text-gray-700">AI-Powered: Traffic analysis and geographic mapping</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="step-2" class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-cool rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">2</div>
+                <div id="step-2" class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 sm:p-8">
+                    <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-secondary to-cool rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl font-bold flex-shrink-0">2</div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Clay + ZoomInfo Data Fusion</h3>
-                            <p class="text-gray-600 leading-relaxed mb-4">Combine Clay and ZoomInfo for maximum coverage. AI deduplication, union, and scoring delivers the most complete dataset. Identify qualifying companies within your accessible service areas.</p>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 text-gray-800">Clay + ZoomInfo Data Fusion</h3>
+                            <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">Combine Clay and ZoomInfo for maximum coverage. AI deduplication, union, and scoring delivers the most complete dataset. Identify qualifying companies within your accessible service areas.</p>
                             <div class="bg-white/60 rounded-xl p-4 mt-4">
                                 <div class="flex items-center space-x-2">
                                     <i class="fas fa-robot text-blue-500"></i>
-                                    <span class="text-sm font-semibold text-gray-700">AI-Powered: Automated deduplication and data union</span>
+                                    <span class="text-xs sm:text-sm font-semibold text-gray-700">AI-Powered: Automated deduplication and data union</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="step-3" class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-cool to-green-400 rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">3</div>
+                <div id="step-3" class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 sm:p-8">
+                    <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cool to-green-400 rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl font-bold flex-shrink-0">3</div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Decision-Maker Discovery + Scoring</h3>
-                            <p class="text-gray-600 leading-relaxed mb-4">Locate key decision-makers at qualifying companies using proprietary scoring algorithm. Analyze 400+ job title patterns and apply your custom criteria with weights. Prioritize C-suite, VP, and Director-level contacts.</p>
-                            <div class="grid grid-cols-2 gap-4 mt-4">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 text-gray-800">Decision-Maker Discovery + Scoring</h3>
+                            <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">Locate key decision-makers at qualifying companies using proprietary scoring algorithm. Analyze 400+ job title patterns and apply your custom criteria with weights. Prioritize C-suite, VP, and Director-level contacts.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                                 <div class="bg-white/60 rounded-xl p-4">
                                     <div class="flex items-center space-x-2">
                                         <i class="fas fa-robot text-green-500"></i>
-                                        <span class="text-sm font-semibold text-gray-700">AI-Powered: Pattern analysis and scoring</span>
+                                        <span class="text-xs sm:text-sm font-semibold text-gray-700">AI-Powered: Pattern analysis and scoring</span>
                                     </div>
                                 </div>
                                 <div class="bg-white/60 rounded-xl p-4">
                                     <div class="flex items-center space-x-2">
                                         <i class="fas fa-user-check text-green-600"></i>
-                                        <span class="text-sm font-semibold text-gray-700">Human QA: Iterative refinement</span>
+                                        <span class="text-xs sm:text-sm font-semibold text-gray-700">Human QA: Iterative refinement</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="step-4" class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl p-8">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-400 rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">4</div>
+                <div id="step-4" class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl p-6 sm:p-8">
+                    <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-accent to-yellow-400 rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl font-bold flex-shrink-0">4</div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Contact Enrichment + Verification</h3>
-                            <p class="text-gray-600 leading-relaxed mb-4">Enrich profiles with verified mobile numbers, professional biographies, and enhanced data fields unavailable through standard tools. Deep insights competitors can't match.</p>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 text-gray-800">Contact Enrichment + Verification</h3>
+                            <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">Enrich profiles with verified mobile numbers, professional biographies, and enhanced data fields unavailable through standard tools. Deep insights competitors can't match.</p>
                             <div class="bg-white/60 rounded-xl p-4 mt-4">
                                 <div class="flex items-center space-x-2">
                                     <i class="fas fa-robot text-yellow-600"></i>
-                                    <span class="text-sm font-semibold text-gray-700">AI-Powered: Multi-source data enrichment</span>
+                                    <span class="text-xs sm:text-sm font-semibold text-gray-700">AI-Powered: Multi-source data enrichment</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="step-5" class="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-8">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-warm rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">5</div>
+                <div id="step-5" class="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 sm:p-8">
+                    <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-warm rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl font-bold flex-shrink-0">5</div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-3 text-gray-800">CRM-Ready Delivery</h3>
-                            <p class="text-gray-600 leading-relaxed mb-4">Receive clean, scored, CRM-ready CSV files in 3-5 business days. Transparent pricing at £2-£3 per lead with no subscriptions, hidden fees, or minimums. Double SDR productivity by eliminating manual list-building.</p>
-                            <div class="grid grid-cols-2 gap-4 mt-4">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-3 text-gray-800">CRM-Ready Delivery</h3>
+                            <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">Receive clean, scored, CRM-ready CSV files in 3-5 business days. Transparent pricing at £2-£3 per lead with no subscriptions, hidden fees, or minimums. Double SDR productivity by eliminating manual list-building.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                                 <div class="bg-white/60 rounded-xl p-4">
                                     <div class="flex items-center space-x-2">
                                         <i class="fas fa-robot text-orange-500"></i>
-                                        <span class="text-sm font-semibold text-gray-700">AI-Powered: Automated formatting</span>
+                                        <span class="text-xs sm:text-sm font-semibold text-gray-700">AI-Powered: Automated formatting</span>
                                     </div>
                                 </div>
                                 <div class="bg-white/60 rounded-xl p-4">
                                     <div class="flex items-center space-x-2">
                                         <i class="fas fa-user-check text-orange-600"></i>
-                                        <span class="text-sm font-semibold text-gray-700">Human QA: Final validation</span>
+                                        <span class="text-xs sm:text-sm font-semibold text-gray-700">Human QA: Final validation</span>
                                     </div>
                                 </div>
                             </div>
@@ -440,54 +452,61 @@
         </div>
     </section>
 
-    <section id="results" class="py-20 px-8 bg-gradient-to-br from-primary/10 to-secondary/10">
+    <section id="results" class="py-12 sm:py-20 px-4 sm:px-8 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div class="max-w-7xl mx-auto text-center">
-            <span class="inline-block bg-accent/30 px-4 py-2 rounded-full font-bold mb-4">Proven Results</span>
-            <h2 class="text-5xl font-bold mb-16">The Numbers <span class="text-primary">Don't Lie</span></h2>
-            <div class="grid grid-cols-4 gap-8">
-                <div id="stat-1" class="bg-white rounded-3xl p-8 shadow-xl">
-                    <div class="text-5xl font-bold text-primary mb-2">2x</div>
-                    <div class="text-gray-600 font-semibold">SDR Productivity Increase</div>
+            <span class="inline-block bg-accent/30 px-4 py-2 rounded-full font-bold mb-4 text-xs sm:text-sm">Proven Results</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 sm:mb-16">The Numbers <span class="text-primary">Don't Lie</span></h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                <div id="stat-1" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-2">2x</div>
+                    <div class="text-sm sm:text-base text-gray-600 font-semibold">SDR Productivity Increase</div>
                 </div>
-                <div id="stat-2" class="bg-white rounded-3xl p-8 shadow-xl">
-                    <div class="text-5xl font-bold text-secondary mb-2">400+</div>
-                    <div class="text-gray-600 font-semibold">Job Title Patterns</div>
+                <div id="stat-2" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary mb-2">400+</div>
+                    <div class="text-sm sm:text-base text-gray-600 font-semibold">Job Title Patterns</div>
                 </div>
-                <div id="stat-3" class="bg-white rounded-3xl p-8 shadow-xl">
-                    <div class="text-5xl font-bold text-accent mb-2">£2-£3</div>
-                    <div class="text-gray-600 font-semibold">Per Qualified Lead</div>
+                <div id="stat-3" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-accent mb-2">£2-£3</div>
+                    <div class="text-sm sm:text-base text-gray-600 font-semibold">Per Qualified Lead</div>
                 </div>
-                <div id="stat-4" class="bg-white rounded-3xl p-8 shadow-xl">
-                    <div class="text-5xl font-bold text-warm mb-2">3-5</div>
-                    <div class="text-gray-600 font-semibold">Day Delivery Time</div>
+                <div id="stat-4" class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-warm mb-2">3-5</div>
+                    <div class="text-sm sm:text-base text-gray-600 font-semibold">Day Delivery Time</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="cta-section" class="py-20 px-8 bg-gradient-to-br from-primary to-warm text-white">
+    <section id="cta-section" class="py-12 sm:py-20 px-4 sm:px-8 bg-gradient-to-br from-primary to-warm text-white">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl font-bold mb-6">Ready to Transform Your Territory Strategy?</h2>
-            <p class="text-xl mb-8 opacity-90">Let our AI + human intelligence system deliver decision-makers within your actual reach</p>
-            <button onclick="openCalendlyPopup(event)" class="bg-white text-primary px-10 py-5 rounded-full font-bold text-xl hover:shadow-2xl transform hover:scale-105 transition-all inline-block cursor-pointer border-0">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to Transform Your Territory Strategy?</h2>
+            <p class="text-lg sm:text-xl mb-8 opacity-90">Let our AI + human intelligence system deliver decision-makers within your actual reach</p>
+            <button onclick="openCalendlyPopup(event)" class="bg-white text-primary px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl hover:shadow-2xl transform hover:scale-105 transition-all inline-block cursor-pointer border-0">
                 Book Free Consultation
             </button>
         </div>
     </section>
 </main>
 
-<footer id="footer" class="bg-gray-900 text-white py-12 px-8">
+<footer id="footer" class="bg-gray-900 text-white py-12 px-4 sm:px-8">
     <div class="max-w-7xl mx-auto text-center">
         <div class="flex items-center justify-center space-x-2 mb-4">
-            <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center transform rotate-12">
-                <i class="fas fa-bullseye text-white text-xl transform -rotate-12"></i>
+            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center transform rotate-12">
+                <i class="fas fa-bullseye text-white text-lg sm:text-xl transform -rotate-12"></i>
             </div>
-            <span class="text-2xl font-bold">Pinpoint Leads</span>
+            <span class="text-xl sm:text-2xl font-bold">Pinpoint Leads</span>
         </div>
-        <p class="text-gray-400 mb-6">AI + Human Intelligence for Territory Precision</p>
-        <div class="text-sm text-gray-500">© 2024 Pinpoint Leads. All rights reserved.</div>
+        <p class="text-sm sm:text-base text-gray-400 mb-6">AI + Human Intelligence for Territory Precision</p>
+        <div class="text-xs sm:text-sm text-gray-500">© 2024 Pinpoint Leads. All rights reserved.</div>
     </div>
 </footer>
+
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+</script>
 
 </body>
 </html>
