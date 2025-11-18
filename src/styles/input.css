@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile viewport fix - ensure no horizontal overflow */
+@layer base {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
