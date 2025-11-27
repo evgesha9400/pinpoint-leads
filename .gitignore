@@ -22,3 +22,6 @@ build/
 
 # MCP Tools
 .playwright-mcp
+
+#Claude
+.claude/
